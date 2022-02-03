@@ -24,9 +24,9 @@
     <form action="insert.php" method="POST" class="col-md-2 col-md-offset-5">
         
         
-        <input type="text" class="form-control" name="name" required="" placeholder="Product Name" pattern="[A-Z,a-z, ]{3,}"><br>
+        <input type="text" class="form-control" name="name" required="" id="name" placeholder="Product Name" pattern="[A-Z,a-z, ]{3,}" onblur="isnull(this.value)"><br>
 
-        <input type="text" class="form-control" name="brand" required="" placeholder="Brand"> <br>
+        <input type="text" class="form-control" name="brand" required="" id="brand" placeholder="Brand" onblur="isnull(this.value)"> <br>
        
         <select  name="category" class="form-control" required="">
             <option selected="" disabled="">Select Category</option>    
@@ -39,7 +39,7 @@
                  
         </select>
         <br>
-        <input type="text" name="price" class="form-control" required="" placeholder="Unit Price"> <br>
+        <input type="text" name="price" class="form-control" required="" name="" placeholder="Unit Price" onblur="isnull(this.value)"> <br>
         <input type="submit" class="btn btn-success btn-sm" name="insert" value="Insert">
         
     </form>
@@ -90,4 +90,11 @@
 </center>
 </div>
 </body>
+<script type="text/javascript">
+    function isnull(x)
+    {
+        if(x=="")
+            alert("Field cannot be empty");
+    }
+</script>
 </html>
